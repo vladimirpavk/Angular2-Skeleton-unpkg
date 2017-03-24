@@ -12,8 +12,8 @@ export class ServerApp {
 
        // this._app.use('/node_modules', express.static(path.resolve(__dirname, '../node_modules')));        
         //this._app.use('/www', express.static(path.resolve(__dirname, '../client')));
-        //this._app.use('*', express.static(path.resolve(__dirname, '../client')));
-        this._app.get('*', (req, res)=>this._renderPage(req, res));        
+        this._app.use(express.static(path.resolve(__dirname, '../docs')));
+        this._app.get('/*', (req, res)=>this._renderPage(req, res));        
      }    
 
     private _renderOk(req: express.Request, res: express.Response){
@@ -23,13 +23,10 @@ export class ServerApp {
     }
 
     private _renderPage(req: express.Request, res: express.Response){ 
-        console.log("Any route requested...");
-        //console.log("angular route requested...");               
-        //res.sendFile(path.resolve(__dirname, '../client/index.html'));
+        console.log("/ route requested...");       
         console.log(req.params[0]);        
-        res.sendFile(path.resolve(__dirname, '../client'+req.params[0]));
-        //res.sendFile(req.params[0]);
-
+        //res.sendFile(path.resolve(__dirname, '../client'+req.params[0]));
+        res.sendFile(req.params[0]);
     }
 
     public startServer(){
