@@ -17,10 +17,11 @@
     <script src="https://unpkg.com/systemjs@0.19.46/dist/system.src.js"></script> 
     <!--<script src="https://unpkg.com/typescript@2.0.0/lib/typescript.js"></script>-->
    
-    <!-- 2. Configure SystemJS -->
-    <script src="systemjs.config.js"></script>
+    <!-- 2. Configure SystemJS -->    
     <script>
-         System.import('app').catch(function(err){ console.error(err); });
+         System.import("systemjs.config.js").then(function(){
+          System.import('app').catch(function(err){ console.error(err); })
+         });
     </script>
  
   </head>
