@@ -2,8 +2,8 @@
  
   <head>
     <!DOCTYPE html>
-    <title>Angular21 application</title>
-    <base href="/Angular2-Skeleton-unpkg/">
+    <title>Angular2 application</title>
+    <base href="/">
  
     <!-- 1. Load libraries -->
     <!--<script src="node_modules/core-js/client/shim.min.js"></script>
@@ -18,9 +18,10 @@
     <!--<script src="https://unpkg.com/typescript@2.0.0/lib/typescript.js"></script>-->
    
     <!-- 2. Configure SystemJS -->
-    <script src="systemjs.config.js"></script>
     <script>
-         System.import('app').catch(function(err){ console.error(err); });
+         System.import("systemjs.config.js").then(function(){
+          System.import('app').catch(function(err){ console.error(err); })
+         });
     </script>
  
   </head>
