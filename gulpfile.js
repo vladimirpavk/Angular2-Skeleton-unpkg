@@ -100,10 +100,10 @@ gulp.task('default', ['watch_server', 'watch_client', 'watch_client_html'], func
 //})
 
 gulp.task('clean_docs', function(){
-    return gulp.src('docs2').pipe(gulpClean());
+    return gulp.src('docs/app').pipe(gulpClean());
 });
 
 gulp.task('make_docs', ['clean_docs'], function(){
-    return gulp.src(['client/**/*.js', 'client/**/*.js.map', 'client/**/*.html'], { base: 'client'}).
+    return gulp.src(['client/app/**/*.js', 'client/app/**/*.js.map', 'client/app/**/*.html'], { base: 'client'}).
         pipe(gulp.dest('docs'));
 });
