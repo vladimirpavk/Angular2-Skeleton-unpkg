@@ -7,10 +7,8 @@ Provided for developing **Angular2** applications using **Typescript** served ov
 Must have node and npm installed
 
 ### How to use
-Install node dependencies in your project root directory (this is where the 'package.json' file is located) using:
-```sh
-$ npm install
-``` 
+No need to install npm packages because we are using **https://unpkg.com**.
+
 Install typescript definitions using:
 ```sh
 $ typings install
@@ -42,3 +40,33 @@ app.module.ts
 main.ts
 ```
 taken from the official Angular2 web page quickstart https://angular.io
+
+###History
+- changed *server_app.ts*:
+1. **_renderPage** method to
+```
+private _renderPage(req: express.Request, res: express.Response){ 
+        res.sendFile(path.resolve(__dirname, '../client'+req.params[0]));
+    }
+```
+2. no more /www path configured from server
+
+####27-03-2017
+- switched to commonjs modules in client application (changed tsconfig.json).
+1. Changes in template *app.component.html* :
+With *system* modules we define:
+```
+@Component({
+  moduleId: __moduleName,
+  selector: 'my-app',
+  templateUrl: './app.component.html'
+})
+```
+With *commonjs* modules we define
+```
+     moduleId: module.id,
+     selector: 'my-app',
+     templateUrl: './app.component.html'
+```
+because **module.id** is provided by the **commonjs** module. Now relative paths are operational.
+
