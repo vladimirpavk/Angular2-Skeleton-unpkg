@@ -1,4 +1,4 @@
-# Angular2 Skeleton - new libs
+# Angular2 Skeleton - online libs
 Node, Express, TypeScript, Gulp, BrowserSync, Angular2 application skeleton.
 
 Provided for developing **Angular2** applications using **Typescript** served over **node-express** server.
