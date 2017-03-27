@@ -70,3 +70,7 @@ With *commonjs* modules we define
 ```
 because **module.id** is provided by the **commonjs** module. Now relative paths are operational.
 
+####28-03-2017
+- created gulp tasks **clean_docs** and **make_docs** to clean dir and copy necessary files to docs
+folder for github pages
+- removed docs3 from tracking but leave locally 
